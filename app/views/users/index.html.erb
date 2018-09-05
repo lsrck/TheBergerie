@@ -3,8 +3,19 @@
 
 <ul>
   <% if user_signed_in? %>
-    <%= link_to 'Se Déconnecter', destroy_user_session_path, method: :delete %>
+    <li>
+      <p> Welcome aboard <%= current_user.username %> </p>
+    </li>
+    <%= link_to 'Editer les informations du compte', edit_user_registration_path %>
+    <li>
+      <%= link_to 'Se Déconnecter', destroy_user_session_path, method: :delete %>
+    </li>
   <% else %>
+  <li>
     <%= link_to 'Se Connecter', new_user_session_path %>
+  </li>
+  <li>
+    <%= link_to 'Créer un nouvel utilisateur', new_user_registration_path %>
+  </li>
   <% end %>
 </ul>
