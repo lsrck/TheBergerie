@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
-  def index; end
+  def create; end
+
+  def index
+    @posts = Post.order(:created_at)
+  end
 
   def show; end
-
-  def new; end
-
-  def create; end
 
   def update; end
 
