@@ -1,19 +1,13 @@
 class StaticPagesController < ApplicationController
-  def home
-  end
+  def home; end
 
-  def news
-  end
+  def news; end
 
-  def art_culture
-  end
+  def art_culture; end
 
-  def cinema
-  end
+  def cinema; end
 
-  def music
-  end
+  def music; end
 
-  def about
-  end
+  def about; end
 end

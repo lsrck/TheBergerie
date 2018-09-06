@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'static_pages/music'
   get 'static_pages/about'
   devise_for :users
-  resources :users, :static_pages
+  resources :users
   root 'static_pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
