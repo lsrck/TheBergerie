@@ -4,18 +4,45 @@
 
 $yellow-color: #faed3a;
 $pink-color: #ea5091;
+$purple-color: #2a1b38;
 $bree-font: 'Bree Serif', Bitter, helvetica, serif;
+$inconsolata-font: 'Inconsolata', helvetica, serif;
 
-/* CONTAINER */
+/* CONTAINER STYLES */
 .global-header {
-  height: 20vh;
-  min-height: 150px;
-  background-color: #2a1b38;
+  position: fixed;
+  background-color: $purple-color;
+  z-index: 100;
+  width: 100%;
+  height: 14vh;
 }
 
 #static_pages {
-  height:80vh;
-  background: linear-gradient( #ea5091, #faed3a);
+  background: linear-gradient( $pink-color, $yellow-color);
+  padding-top: 14vh;
+}
+
+.content-container {
+  min-height: 74vh;
+}
+
+.global-footer {
+  width: 100%;
+  height: 12vh;
+  min-height: 70px;
+}
+
+/* GLOBAL PAGE STYLES */
+
+%lists-menu {
+  display: flex;
+    li {
+      list-style-type: none;
+    }
+    &> li a {
+      text-decoration: none;
+    }
+    /*all li elements next to an initial li */
 }
 
 /* HEADER STYLES */
@@ -29,11 +56,13 @@ $bree-font: 'Bree Serif', Bitter, helvetica, serif;
 }
 
 .header-logo {
-  min-height: 150px;
   width: 30%;
   display: flex;
   flex-direction:column;
-  justify-content: center;
+  justify-content: space-around;
+  img {
+    height: 6.5vh;
+  }
 }
 
 .social-nav-block {
@@ -46,27 +75,21 @@ $bree-font: 'Bree Serif', Bitter, helvetica, serif;
 
 .header-social {
   height: 50%;
-  padding: 20px 0;
+  padding: 1vh 0;
 }
 
 .header-nav {
   height: 50%;
-  padding: 20px 0;
+  padding: 1vh 0;
 }
 
 .header-list {
   height: 100%;
-  display: flex;
-  li {
-    list-style-type: none;
-  }
-  &> li a {
-    text-decoration: none;
-  }
+  @extend %lists-menu;
   /*all li elements next to an initial li */
-  &> li ~ li {
-    padding-left: 1em;
-  }
+    &> li ~ li {
+      padding-left: 1em;
+    }
 }
 
 .social-list {
@@ -100,7 +123,7 @@ $bree-font: 'Bree Serif', Bitter, helvetica, serif;
 
 .site-title {
   font-size: 18.5px;
-  color: #faed3a;
+  color: $yellow-color;
   font-family: $bree-font;
   text-transform: uppercase;
   width: 140px;
@@ -110,7 +133,34 @@ $bree-font: 'Bree Serif', Bitter, helvetica, serif;
 .site-description {
   color: $pink-color;
   font-size: 13px;
-  font-family: 'Inconsolata', helvetica, serif;
+  font-family: $inconsolata-font;
   font-style: normal;
   text-transform: uppercase;
+}
+
+/* FOOTER STYLES */
+
+.footer {
+  background-color: $purple-color;
+  height: 100%;
+  width: 70vw;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.copyright {
+  color: $yellow-color;
+  font-size: 11.5px;
+  font-family: $inconsolata-font;
+}
+
+.footer-list {
+  @extend %lists-menu;
+    &> li ~ li {
+    padding-left: 1em;
+  }
 }
