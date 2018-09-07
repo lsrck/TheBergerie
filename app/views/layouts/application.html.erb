@@ -18,7 +18,9 @@
       <%= render 'layouts/header' %>
     </div>
     <div id="<%= params[:controller].parameterize %>">
-      <%= yield %>
+      <div class="content-container">
+        <%= yield %>
+      </div>
       <div class="global-footer">
         <%= render 'layouts/footer' %>
       </div>

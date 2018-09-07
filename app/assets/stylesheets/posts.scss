@@ -1,3 +1,21 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* CONTAINER STYLES */
+#posts {
+  background: linear-gradient( $pink-color, $yellow-color);
+  padding-top: 14vh;
+}
+
+.content-container {
+  min-height: 74vh;
+}
+
+/* CONTENT STYLES */
+.post-form {
+  display: flex;
+  flex-direction: column;
+  width:40vw;
+  margin: auto;
+}

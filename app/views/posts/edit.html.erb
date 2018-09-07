@@ -1,4 +1,8 @@
-<h1>Publier un article</h1>
+<%= @post.user.username %>
+<%= @post.title %>
+<%= @post.content %>
+<%= @post.category %>
+
 <%= form_for(@post, html: {class: "post-form"}) do |f| %>
   <%= render 'layouts/error_messages' %>
 

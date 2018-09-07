@@ -1,2 +1,7 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<%= @post.user.username %>
+<%= @post.title %>
+<%= @post.content %>
+<%= @post.category %>
+<li><%= link_to "Editer l'article", edit_post_path(@post) %></li>
+<li><%= link_to "Supprimer l'article", @post, method: :delete,
+                            data: { confirm: "Etes-vous sur de bien vouloir supprimer l'article?" } %></li>
