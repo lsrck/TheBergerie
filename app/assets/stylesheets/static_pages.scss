@@ -1,3 +1,116 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$yellow-color: #faed3a;
+$pink-color: #ea5091;
+$bree-font: 'Bree Serif', Bitter, helvetica, serif;
+
+/* CONTAINER */
+.global-header {
+  height: 20vh;
+  min-height: 150px;
+  background-color: #2a1b38;
+}
+
+#static_pages {
+  height:80vh;
+  background: linear-gradient( #ea5091, #faed3a);
+}
+
+/* HEADER STYLES */
+.header {
+  height: 100%;
+  width: 70vw;
+  margin: auto;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+.header-logo {
+  min-height: 150px;
+  width: 30%;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+}
+
+.social-nav-block {
+  height: 100%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.header-social {
+  height: 50%;
+  padding: 20px 0;
+}
+
+.header-nav {
+  height: 50%;
+  padding: 20px 0;
+}
+
+.header-list {
+  height: 100%;
+  display: flex;
+  li {
+    list-style-type: none;
+  }
+  &> li a {
+    text-decoration: none;
+  }
+  /*all li elements next to an initial li */
+  &> li ~ li {
+    padding-left: 1em;
+  }
+}
+
+.social-list {
+  justify-content:flex-end;
+  align-items: flex-start;
+  a {
+  font-size: 11px;
+  font-style: italic;
+  color: $yellow-color;
+  font-family: 'Open Sans', helvetica, sans-serif;
+  }
+}
+
+.nav-list {
+  justify-content:flex-end;
+  align-items: flex-end;
+    a{
+      color: $yellow-color;
+      font-family: $bree-font;
+      font-size: 16.5px;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    a:hover{
+      background-color:#ea5091;
+    }
+    a:active{
+      opacity: 0.8;
+  }
+}
+
+.site-title {
+  font-size: 18.5px;
+  color: #faed3a;
+  font-family: $bree-font;
+  text-transform: uppercase;
+  width: 140px;
+  line-height: 0.7;
+}
+
+.site-description {
+  color: $pink-color;
+  font-size: 13px;
+  font-family: 'Inconsolata', helvetica, serif;
+  font-style: normal;
+  text-transform: uppercase;
+}

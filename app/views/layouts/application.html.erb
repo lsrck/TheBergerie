@@ -7,9 +7,18 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet"> 
   </head>
 
   <body>
-    <%= yield %>
+    <div class="global-header">
+      <%= render 'layouts/header' %>
+    </div>
+      <div id="<%= params[:controller].parameterize %>">
+        <%= yield %>
+      </div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
