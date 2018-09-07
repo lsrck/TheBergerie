@@ -1,0 +1,166 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$yellow-color: #faed3a;
+$pink-color: #ea5091;
+$purple-color: #2a1b38;
+$bree-font: 'Bree Serif', Bitter, helvetica, serif;
+$inconsolata-font: 'Inconsolata', helvetica, serif;
+
+/* CONTAINER STYLES */
+.global-header {
+  position: fixed;
+  background-color: $purple-color;
+  z-index: 100;
+  width: 100%;
+  height: 14vh;
+}
+
+#static_pages {
+  background: linear-gradient( $pink-color, $yellow-color);
+  padding-top: 14vh;
+}
+
+.content-container {
+  min-height: 74vh;
+}
+
+.global-footer {
+  width: 100%;
+  height: 12vh;
+  min-height: 70px;
+}
+
+/* GLOBAL PAGE STYLES */
+
+%lists-menu {
+  display: flex;
+    li {
+      list-style-type: none;
+    }
+    &> li a {
+      text-decoration: none;
+    }
+    /*all li elements next to an initial li */
+}
+
+/* HEADER STYLES */
+.header {
+  height: 100%;
+  width: 70vw;
+  margin: auto;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+.header-logo {
+  width: 30%;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-around;
+  img {
+    height: 6.5vh;
+  }
+}
+
+.social-nav-block {
+  height: 100%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.header-social {
+  height: 50%;
+  padding: 1vh 0;
+}
+
+.header-nav {
+  height: 50%;
+  padding: 1vh 0;
+}
+
+.header-list {
+  height: 100%;
+  @extend %lists-menu;
+  /*all li elements next to an initial li */
+    &> li ~ li {
+      padding-left: 1em;
+    }
+}
+
+.social-list {
+  justify-content:flex-end;
+  align-items: flex-start;
+  a {
+  font-size: 11px;
+  font-style: italic;
+  color: $yellow-color;
+  font-family: 'Open Sans', helvetica, sans-serif;
+  }
+}
+
+.nav-list {
+  justify-content:flex-end;
+  align-items: flex-end;
+    a{
+      color: $yellow-color;
+      font-family: $bree-font;
+      font-size: 16.5px;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    a:hover{
+      background-color:#ea5091;
+    }
+    a:active{
+      opacity: 0.8;
+  }
+}
+
+.site-title {
+  font-size: 18.5px;
+  color: $yellow-color;
+  font-family: $bree-font;
+  text-transform: uppercase;
+  width: 140px;
+  line-height: 0.7;
+}
+
+.site-description {
+  color: $pink-color;
+  font-size: 13px;
+  font-family: $inconsolata-font;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+/* FOOTER STYLES */
+
+.footer {
+  background-color: $purple-color;
+  height: 100%;
+  width: 70vw;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.copyright {
+  color: $yellow-color;
+  font-size: 11.5px;
+  font-family: $inconsolata-font;
+}
+
+.footer-list {
+  @extend %lists-menu;
+    &> li ~ li {
+    padding-left: 1em;
+  }
+}
