@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'static_pages/home'
+  get 'static_pages/show'
+  get '/static_pages/:id', to: 'static_pages#show'
   get 'static_pages/news'
   get 'static_pages/art_culture'
   get 'static_pages/cinema'

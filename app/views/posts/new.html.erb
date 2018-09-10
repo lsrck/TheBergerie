@@ -1,7 +1,7 @@
 <h1>Publier un article</h1>
 <%= form_for(@post, html: {class: "post-form"}) do |f| %>
   <%= render 'layouts/error_messages' %>
-
+  
   <%= f.label :title %>
   <%= f.text_field :title %>
 

@@ -2,38 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$yellow-color: #faed3a;
-$pink-color: #ea5091;
-$purple-color: #2a1b38;
-$bree-font: 'Bree Serif', Bitter, helvetica, serif;
-$inconsolata-font: 'Inconsolata', helvetica, serif;
 
 /* CONTAINER STYLES */
-.global-header {
-  position: fixed;
-  background-color: $purple-color;
-  z-index: 100;
-  width: 100%;
-  height: 14vh;
-}
 
 #static_pages {
   background: linear-gradient( $pink-color, $yellow-color);
   padding-top: 14vh;
-}
-
-.content-container {
-  min-height: 74vh;
-}
-
-.content-container {
-  min-height: 74vh;
-}
-
-.global-footer {
-  width: 100%;
-  height: 12vh;
-  min-height: 70px;
 }
 
 /* GLOBAL PAGE STYLES */
@@ -60,7 +34,7 @@ $inconsolata-font: 'Inconsolata', helvetica, serif;
 }
 
 .header-logo {
-  width: 30%;
+  width: 40%;
   display: flex;
   flex-direction:column;
   justify-content: space-around;
@@ -71,7 +45,7 @@ $inconsolata-font: 'Inconsolata', helvetica, serif;
 
 .social-nav-block {
   height: 100%;
-  width: 70%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;

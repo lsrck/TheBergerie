@@ -8,11 +8,87 @@
   padding-top: 14vh;
 }
 
-.content-container {
-  min-height: 74vh;
-}
 
 /* CONTENT STYLES */
+.posts-global-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction:column;
+  &>h1, >span {
+    text-align: center;
+    font-family: $bree-font;
+    font-size: 30px;
+    text-transform: uppercase;
+  }
+  &>h1 {
+    margin: 5vh auto 5vh auto;
+    display: inline-block;
+    padding: 2vh 0.2vw;
+    color: $yellow-color;
+    background-color: $pink-color;
+  }
+  &>span {
+    display: inline-block;
+    color: $pink-color;
+    margin-bottom: 5vh;
+  }
+}
+
+.index-posts-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.index-posts {
+  display: flex;
+  box-sizing: border-box;
+  margin: 2vh 10vw;
+  padding: 0 0 4vh 0;
+  border-bottom: solid 1px #b4b4b4;
+}
+
+.thumbnails-posts {
+  margin-right: 2vw;
+}
+
+.info-posts { 
+  display: flex;
+  flex-direction: column;
+  &>h2 {
+    text-transform: uppercase;
+  }
+}
+
+.post-category-posts {
+  font-family: $bree-font;
+  color: $pink-color;
+  font-size: 17px;
+  text-transform: uppercase;
+}
+
+.post-date-posts {
+  font-family: $inconsolata-font;
+  font-size: 14px;
+}
+
+.post-user-posts {
+  color: $brown-color;
+  font-style: italic;
+  font-weight: bold;
+  font-family: 'Open-sans', sans-serif;
+  font-size: 13px;
+}
+
+.post-content-posts {
+  font-family: 'Open Sans', helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 19px;
+  font-weight: normal;
+  text-align: justify;
+}
+
+/* FORM STYLES */
 .post-form {
   display: flex;
   flex-direction: column;

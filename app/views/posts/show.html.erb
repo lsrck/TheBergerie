@@ -1,6 +1,6 @@
 <%= @post.user.username %>
 <%= @post.title %>
-<%= @post.content %>
+<%=raw @post.content %>
 <%= @post.category %>
 <li><%= link_to "Editer l'article", edit_post_path(@post) %></li>
 <li><%= link_to "Supprimer l'article", @post, method: :delete,

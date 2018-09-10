@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  def create; end
 
   def index
     @posts = Post.order(:created_at)
@@ -47,6 +46,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-      params.require(:post).permit(:title, :category, :content)
+      params.require(:post).permit(:thumbnail, :title, :category, :content)
   end
 end
