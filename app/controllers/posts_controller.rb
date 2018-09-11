@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.order(:created_at)
+    @posts = Post.order(:created_at).reverse
   end
 
   def show
@@ -45,6 +45,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit( :title, :category, :preview, :content)
+    params.permit( :title, :preview, :content)
   end
 end

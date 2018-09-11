@@ -1,7 +1,7 @@
 <%= @post.user.username %>
 <%= @post.title %>
 <%=raw @post.content %>
-<%= @post.category %>
+category
 <li><%= link_to "Editer l'article", edit_post_path(@post) %></li>
 <li><%= link_to "Supprimer l'article", @post, method: :delete,
                             data: { confirm: "Etes-vous sur de bien vouloir supprimer l'article?" } %></li>

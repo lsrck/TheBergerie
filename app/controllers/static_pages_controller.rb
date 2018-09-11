@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
-    @posts = Post.order(:created_at)
+    @posts = Post.order(:created_at).reverse
   end
 
   def news
