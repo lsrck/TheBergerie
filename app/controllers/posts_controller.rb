@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-
   def index
     @posts = Post.order(:created_at)
   end
@@ -29,7 +28,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if @post.update_attributes(post_params)
+    if @post.update(post_params)
       flash[:success] = "L'article a été édité!"
       redirect_to @post
     else
@@ -46,6 +45,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-      params.require(:post).permit( :title, :category, :preview, :content)
+    params.require(:post).permit( :title, :category, :preview, :content)
   end
 end

@@ -6,7 +6,7 @@ class StaticPagesController < ApplicationController
   def news
     @posts = Post.order(:created_at)
   end
-  
+
   def show
     @post = Post.find(params[:id])
   end
