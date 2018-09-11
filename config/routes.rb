@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
   get 'static_pages/home'
-  get 'static_pages/show'
-  get '/static_pages/:id', to: 'static_pages#show'
-  get 'static_pages/news'
+  get '/static_pages/news'
   get 'static_pages/art_culture'
   get 'static_pages/cinema'
   get 'static_pages/music'
   get 'static_pages/about'
+  get '/static_pages/:id', to: 'static_pages#show'
   devise_for :users
   resources :posts
   root 'static_pages#home'

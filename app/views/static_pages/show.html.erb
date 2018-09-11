@@ -1,4 +1,16 @@
-<%= @post.user.username %>
-<%= @post.title %>
-<%=raw @post.content %>
-<%= @post.category %>
+<% provide(:title, @post.title.to_s) %>
+<div class="posts-global-wrapper">
+  <span class="post-category-posts"> <%= @post.category %> </span>
+  <h1> <%= @post.title %> </h1>
+  <div class="post-date-user-posts">
+    <span class="post-date-posts"> <%= @post.created_at.to_date.strftime("%d-%m-%Y") %> </span>
+    <span class="post-user-posts"> <%= @post.user.username.capitalize%> </span>
+  </div>
+  <div class="post-preview-content">
+    <%= raw @post.preview %>
+  </div>
+  <div class="post-content-posts">
+    <%= raw @post.content %>
+  </div>
+</div>
+

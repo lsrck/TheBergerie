@@ -10,7 +10,8 @@
 
 
 /* CONTENT STYLES */
-.posts-global-wrapper {
+
+.posts-home-wrapper, .posts-index-wrapper {
   width: 100%;
   display: flex;
   flex-direction:column;
@@ -80,12 +81,16 @@
   font-size: 13px;
 }
 
-.post-content-posts {
+.post-preview-content, .post-content-posts {
   font-family: 'Open Sans', helvetica, sans-serif;
   font-size: 13px;
   line-height: 19px;
   font-weight: normal;
   text-align: justify;
+  a {
+    text-decoration: none;
+    color: $pink-color;
+  }
 }
 
 /* FORM STYLES */
