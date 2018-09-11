@@ -20,17 +20,21 @@ RSpec.describe PostsController, type: :controller do
     let!(:title) { Faker::LeagueOfLegends.champion }
     let!(:preview) { Faker::ChuckNorris.fact }
     let!(:content) { Faker::HarryPotter.quote }
+    let!(:user) { create(:user) }
 
     subject do
-      post :create, params: { title: title, preview: preview, content: content }
+      post :create, params: {post: { title: title, preview: preview, content: content} }
     end
 
     it "creates a new post" do
-    expect { subject }.to change(Post, :count).by(1)
-    first_post = Post.new
-    expect(first_post.title).to eq(title)
-    expect(first_post.preview).to eq(preview)
-    expect(first_post.content).to eq(content)
+      expect { subject }.to change(Post, :count).by(1)
+      expect(Post.last.title).to eq(title)
+      expect(Post.last.preview).to eq(preview)
+      expect(Post.last.content).to eq(content)
+      first_post = Post.first
+      expect(first_post.title).to eq(title)
+      expect(first_post.preview).to eq(preview)
+      expect(first_post.content).to eq(content)
     end
 
     context "with no title" do
@@ -38,16 +42,25 @@ RSpec.describe PostsController, type: :controller do
 
       it "fails creating the post" do
         expect { subject }.not_to(change(Post, :count))
-        expect(response.status).to eq(403)
       end
     end
   end
 
-  describe "GET #show" do
+  describe "#show" do
+    let(:post) { create(:post) }
+    let(:id) { post.id }
+    let!(:user) { create(:user) }
+
+    subject do
+      get :show, params: { id: id}
+    end
+
     it "returns http success" do
-      get :show
+      byebug
+      subject
       expect(response).to have_http_status(:success)
     end
+
   end
 
   describe "GET #new" do

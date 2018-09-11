@@ -15,7 +15,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user = User.last
     if @post.save
-      flash[:success] = "L'article a été publié!"
+      #flash[:success] = "L'article a été publié!"
       redirect_to @post
     else
       render :new
@@ -45,6 +45,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.permit( :title, :preview, :content)
+    params.require(:post).permit( :title, :preview, :content)
   end
 end
