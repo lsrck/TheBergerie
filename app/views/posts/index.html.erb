@@ -1,5 +1,4 @@
-<% provide(:title, "") %>
-<div class="posts-home-wrapper">
+<div class="posts-index-wrapper">
   <h1>THE BERGERIE</h1>
   <span> Le meilleur de l'élevage pop-culturel! </br> Depuis 2015 </span>
   <div class="index-posts-wrapper">
@@ -16,7 +15,7 @@
           <span class="post-user-posts"> <%= post.user.username.capitalize%> </span>
         </div>
         <div class="post-content-posts">
-          <%= raw post.content %>
+          <%= raw post.preview %>
         </div>
       </div>
     </div>

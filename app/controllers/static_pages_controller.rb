@@ -1,9 +1,19 @@
 class StaticPagesController < ApplicationController
-  def home; end
+  def home
+    @posts = Post.order(:created_at)
+  end
 
-  def news; end
+  def news
+    @posts = Post.order(:created_at)
+  end
 
-  def art_culture; end
+  def show
+    @post = Post.find(params[:id])
+  end
+
+  def art_culture
+    @posts = Post.order(:created_at)
+  end
 
   def cinema; end
 
