@@ -14,6 +14,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user = User.last
+    @post.category = Category.last
     if @post.save
       # flash[:success] = "L'article a été publié!"
       redirect_to @post

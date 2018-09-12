@@ -6,6 +6,7 @@ RSpec.describe PostsController, type: :controller do
     let(:preview) { Faker::ChuckNorris.fact }
     let(:content) { Faker::HarryPotter.quote }
     let!(:user) { create(:user) }
+    let!(:category) { create(:category) }
 
     subject do
       post :create, params: { post: { title: title, preview: preview, content: content } }

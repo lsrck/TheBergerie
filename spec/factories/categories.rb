@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :category do
-    name {Faker::Beer.name}
+    name { %w(Actualité Art/Culture Cinéma Musique).sample }
   end
 end
