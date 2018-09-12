@@ -1,18 +1,15 @@
 <h1>Publier un article</h1>
 <%= form_for(@post, html: {class: "post-form"}) do |f| %>
   <%= render 'layouts/error_messages' %>
-  
+
   <%= f.label :title %>
   <%= f.text_field :title %>
-
-  <%= f.label :category %>
-  <%= f.select(:category, options_for_select(["Actualité","Art/Culture","Cinema","Musique"])) %>
 
   <%= f.label :preview %>
   <%= f.text_field :preview %>
 
   <%= f.label :content %>
   <%= f.text_field :content %>
-
+    
   <%= f.submit "Créer mon article", class: "btn btn-primary" %>
 <% end %>

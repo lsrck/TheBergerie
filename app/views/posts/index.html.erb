@@ -1,24 +1,3 @@
 <div class="posts-index-wrapper">
-  <h1>THE BERGERIE</h1>
-  <span> Le meilleur de l'élevage pop-culturel! </br> Depuis 2015 </span>
-  <div class="index-posts-wrapper">
-    <% @posts.each do |post|%>
-    <div class="index-posts">
-      <div class="thumbnails-posts">
-        <%= image_tag("noxo.png", alt: "Noxorae") %>
-      </div>
-      <div class="info-posts">
-        <span class="post-category-posts"> <%= post.category %> </span>
-        <h2> <%= post.title %> </h2>
-        <div class="post-date-user-posts">
-          <span class="post-date-posts"> <%= post.created_at.to_date.strftime("%d-%m-%Y") %> </span>
-          <span class="post-user-posts"> <%= post.user.username.capitalize%> </span>
-        </div>
-        <div class="post-content-posts">
-          <%= raw post.preview %>
-        </div>
-      </div>
-    </div>
-    <% end %>
-  </div>
+  <%= render 'layouts/index' %>
 </div>
