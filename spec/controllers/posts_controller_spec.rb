@@ -1,9 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
-
   describe "the user logs"
-    before :each do
+  before :each do
     sign_in create(:user)
   end
 
