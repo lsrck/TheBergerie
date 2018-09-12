@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+    before_action :authenticate_user!
   def index
     @posts = Post.order(:created_at).reverse
   end
@@ -13,7 +14,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.user = User.last
+    @post.user = current_user
     @post.category = Category.last
     if @post.save
       # flash[:success] = "L'article a été publié!"
