@@ -7,7 +7,7 @@
 
 #static_pages {
   /*background: linear-gradient( $pink-color, $yellow-color);*/
-  background-image: url(<%= asset_path("bckg_pop.png") %>);
+  background-image:url('<%= asset_path("bckg_pop.png") %>');
   background-attachment: fixed;
   background-size: cover;
   padding-top: 14vh;
