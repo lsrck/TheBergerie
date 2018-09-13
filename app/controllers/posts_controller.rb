@@ -10,6 +10,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @category_options = [['Actualité', 1], ['Art/Culture', 2], ['Musique', 3], ['Cinéma', 4]]
   end
 
   def create
@@ -25,6 +26,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @category_options = [['Actualité', 1], ['Art/Culture', 2], ['Musique', 3], ['Cinéma', 4]]
   end
 
   def update
@@ -46,6 +48,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit( :title, :preview, :content, categories_attributes: %i[id name])
+    params.require(:post).permit( :title, :preview, :content, :category_id)
   end
 end

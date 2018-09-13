@@ -12,9 +12,10 @@ RSpec.describe PostsController, type: :controller do
     let(:content) { Faker::HarryPotter.quote }
     let!(:user) { create(:user) }
     let!(:category) { create(:category) }
+    let (:category_id) {category.id}
 
     subject do
-      post :create, params: { post: { title: title, preview: preview, content: content } }
+      post :create, params: { post: { title: title, preview: preview, content: content, category_id: category_id } }
     end
 
     it "creates a new post" do
