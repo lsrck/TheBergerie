@@ -44,18 +44,22 @@
 .index-posts {
   display: flex;
   box-sizing: border-box;
-  margin: 2vh 10vw;
+  margin: 2vh 5vw;
   padding: 0 0 4vh 0;
   border-bottom: solid 1px #b4b4b4;
 }
 
 .thumbnails-posts {
   margin-right: 2vw;
+  img {
+    height: 100%;
+  }
 }
 
 .info-posts { 
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   &>h2 {
     text-transform: uppercase;
   }
@@ -81,7 +85,7 @@
   font-size: 13px;
 }
 
-.post-preview-content, .post-content-posts {
+.post-preview-posts, .post-content-posts {
   font-family: 'Open Sans', helvetica, sans-serif;
   font-size: 13px;
   line-height: 19px;
@@ -92,6 +96,25 @@
     color: $pink-color;
   }
 }
+
+.post-show-button {
+  display: flex;
+  align-items: center;
+  a {
+    white-space: nowrap;
+    font-size: 13px;
+    font-family: 'Open Sans', helvetica, sans-serif;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight:lighter;
+    background-color: $yellow-color;
+    padding: 1.5vh 1vw;
+ }
+}
+
+
+
 
 /* FORM STYLES */
 .post-form {

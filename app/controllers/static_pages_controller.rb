@@ -4,7 +4,7 @@ class StaticPagesController < ApplicationController
   end
 
   def news
-    @posts = Post.order(:created_at)
+    @posts = Post.order(:created_at).reverse
   end
 
   def show
@@ -12,12 +12,16 @@ class StaticPagesController < ApplicationController
   end
 
   def art_culture
-    @posts = Post.order(:created_at)
+    @posts = Post.order(:created_at).reverse
   end
 
-  def cinema; end
+  def cinema
+    @posts = Post.order(:created_at).reverse
+  end
 
-  def music; end
+  def music 
+    @posts = Post.order(:created_at).reverse
+  end
 
   def about; end
 end
