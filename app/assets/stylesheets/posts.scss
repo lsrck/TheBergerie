@@ -8,10 +8,7 @@
   padding-top: 14vh;
 }
 
-
-/* CONTENT STYLES */
-
-.posts-home-wrapper, .posts-index-wrapper {
+%postswrapper {
   width: 100%;
   display: flex;
   flex-direction:column;
@@ -34,6 +31,18 @@
     margin-bottom: 5vh;
   }
 }
+
+.posts-home-wrapper, .posts-index-wrapper {
+  @extend %postswrapper
+}
+
+
+.posts-new-wrapper {
+  align-items: center;
+  @extend %postswrapper
+}
+
+/* CONTENT STYLES */
 
 .index-posts-wrapper {
   display: flex;
@@ -113,13 +122,24 @@
  }
 }
 
-
-
-
 /* FORM STYLES */
 .post-form {
   display: flex;
   flex-direction: column;
-  width:40vw;
-  margin: auto;
+  width: 40vw;
+}
+
+/* EDITOR STYLES */
+
+.text-editor {
+  width: 100%;
+  margin: 1vh 0;
+}
+
+#text-editor-input, #text-editor-output { 
+  width: 40vw;// La largeur de l'éditeur
+  height: 40vh; // La hauteur de l'éditeur
+  border: 1px solid black; // Une bordure pour bien voir l'éditeur
+  padding: 5px; // Une petite marge intérieure
+  overflow: auto; // Cette propriété sert à envoyer le texte à la ligne au cas où il dépasse la largeur définie avant
 }

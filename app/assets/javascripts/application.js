@@ -14,3 +14,27 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+function commande(nom,argument){
+  console.log(nom);
+  console.log(argument);
+  if (typeof argument === "undefined") {
+    argument = '';
+  }
+  switch(nom){
+    case "createLink":
+      argument = prompt("Quelle est l'adresse du lien ?");
+    break;
+    case "insertImage":
+      argument = prompt("Quelle est l'adresse de l'image ?");
+    break;
+  }
+  // Exécuter la commande
+  document.execCommand(nom, false, argument);
+}
+
+function resultat(){
+  console.log(document.getElementById("text-editor-output"));
+  console.log(document.getElementById("text-editor-input"));
+  document.getElementById("text-editor-output").value = document.getElementById("text-editor-input").innerHTML;
+}
