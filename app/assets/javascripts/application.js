@@ -16,8 +16,6 @@
 //= require_tree .
 
 function commande(nom,argument){
-  console.log(nom);
-  console.log(argument);
   if (typeof argument === "undefined") {
     argument = '';
   }
@@ -33,8 +31,11 @@ function commande(nom,argument){
   document.execCommand(nom, false, argument);
 }
 
-function resultat(){
-  console.log(document.getElementById("text-editor-output"));
-  console.log(document.getElementById("text-editor-input"));
-  document.getElementById("text-editor-output").value = document.getElementById("text-editor-input").innerHTML;
+function tester(){
+  if(document.queryCommandValue("h1")){
+    document.getElementById("bouton_bold").className = "actif";
+  }
+  else{
+    document.getElementById("bouton_bold").className = "";
+  }
 }

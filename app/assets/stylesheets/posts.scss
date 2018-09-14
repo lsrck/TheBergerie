@@ -127,19 +127,67 @@
   display: flex;
   flex-direction: column;
   width: 40vw;
+  margin-bottom: 5vh;
+  &>label {
+    margin: 1vh 0vw;
+  }
 }
 
 /* EDITOR STYLES */
 
 .text-editor {
   width: 100%;
-  margin: 1vh 0;
+  margin-bottom: 1vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &>input {
+    margin-bottom: 1vh;
+  }
+}
+
+.text-editor-menu, {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 88%;
+  margin: auto;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  .paragraphe-button {
+  border-radius: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: inset 0 1px 1px -1px rgba(0,0,0,.2);
+  font-size: 13px;
+  line-height: 20px;
+  padding-left: 6px;
+  padding-right: 20px;
+}
+
+  input, select {
+    min-height: 30px;
+    margin: 3px;
+    border-radius: 2px;
+  }
 }
 
 #text-editor-input, #text-editor-output { 
-  width: 40vw;// La largeur de l'éditeur
-  height: 40vh; // La hauteur de l'éditeur
-  border: 1px solid black; // Une bordure pour bien voir l'éditeur
-  padding: 5px; // Une petite marge intérieure
+  width: 80%;// La largeur de l'éditeur
+  height: 100%; // La hauteur de l'éditeur
+  border: 1px solid #ddd;; // Une bordure pour bien voir l'éditeur
+  padding: 4% 4% ; // Une petite marge intérieure
   overflow: auto; // Cette propriété sert à envoyer le texte à la ligne au cas où il dépasse la largeur définie avant
+}
+
+.textarea-wrapper {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  width: 100%;
+  height: 50vh;
+}
+
+.actif {
+  background-color: grey;
 }

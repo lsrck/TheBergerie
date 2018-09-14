@@ -6,45 +6,51 @@
     <%= f.label :catégorie %>
     <%= f.select(:category_id, @category_options) %>
       
-    <%= f.label :titre %>
-    <%= f.text_field :title %>
+    <%= f.label :titre, "Titre (Préformaté)" %>
+    <%= f.text_field :title, placeholder: "Titre de l'article" %>
 
-    <%= f.label :preview %>
-    <%= f.text_field :preview %>
+    <%= f.label :preview, "Résumé (Préformaté)" %>
+    <%= f.text_field :preview, placeholder: "Résumé de l'article" %>
 
-    <%= f.label :contenu %>
-    <%= f.text_field :content %>
+    <%= f.label :contenu, "Article (HTML!)" %>
+    <%= f.text_field :content, placeholder: "Coller le contenu HTML obtenu par un éditeur" %>
       
     <%= f.submit "Créer mon article", class: "btn btn-primary" %>
   <% end %>
 
+  <span>Editeur WYSIWYG (What you see is what you get) </span>
   <div class="text-editor">
-    Editeur WYSIWYG (What you see is what you get) </br>
-    <input type="button" value="p" onclick="commande('');" ></code>
-    <select onchange="commande('heading', this.value); this.selectedIndex = 0;">
-      <option value="">Titre</option>
-      <option value="h1">H1</option>
-      <option value="h2">H2</option>
-      <option value="h3">H3</option>
-    </select>
-    <input type="button" value="G" style="font-weight:bold;" onclick="commande('bold');" ></code>
-    <input type="button" value="I" onclick="commande('italic');"></code>
-    <input type="button" value="S" onclick="commande('underline');"></code>
-    <input type="button" value="UL" onclick="commande('insertUnorderedList');" ></code>
-    <input type="button" value="OL" onclick="commande('insertOrderedList');" ></code>
-    <input type="button" value="Quote" onclick="commande('formatBlock');" ></code>
-    <input type="button" value="AG" onclick="commande('justifyLeft');" ></code>
-    <input type="button" value="AD" onclick="commande('justifyRight');" ></code>
-    <input type="button" value="C" onclick="commande('justifyCenter');" ></code>
-    <input type="button" value="Just" onclick="commande('justifyFull');" ></code>
-    <input type="button" value="Lien" onclick="commande('createLink');" ></code>
-    <input type="button" value="Image" onclick="commande('insertImage');" ></code>
-    <input type="button" value="Undo" onclick="commande('undo');" ></code>
-    <div id="text-editor-input" contentEditable> </div>
+    <div class="text-editor-menu">
+      <select class="paragraphe-button" onchange="commande('heading', this.value); this.selectedIndex = 0;">
+        <option value="">paragraphe</option>
+        <option value="h1">H1</option>
+        <option value="h2">H2</option>
+        <option value="h3">H3</option>
+      </select>
+      <input type="button" id="bouton_bold" value="B" style="font-weight:bold;" onclick="commande('bold');"></code>
+      <input type="button" id="bouton_italic" value="I" style="font-style: italic;" onclick="commande('italic');"></code>
+      <input type="button" id="bouton_souligné" value="S" style="text-decoration: underline;" onclick="commande('underline');"></code>
+      <input type="button" id="bouton_UL" value="UL" onclick="commande('insertUnorderedList');" ></code>
+      <input type="button" id="bouton_OL" value="OULL" onclick="commande('insertOrderedList');" ></code>
+      <input type="button" id="bouton_quote" value="Quote" onclick="commande('formatBlock');" ></code>
+      <input type="button" id="bouton_gauche" value="Gauche" onclick="commande('justifyLeft');" ></code>
+      <input type="button" id="bouton_droite" value="Droite" onclick="commande('justifyRight');" ></code>
+      <input type="button" id="bouton_centrer" value="Centrer" onclick="commande('justifyCenter');" ></code>
+      <input type="button" id="bouton_justifier" value="Justifier" onclick="commande('justifyFull');" ></code>
+      <input type="button" value="Lien" onmousedown="event.preventDefault();" onclick="commande('createLink');" ></code>
+      <input type="button" value="Image" onclick="commande('insertImage');" ></code>
+      <input type="button" value="Undo" onclick="commande('undo');" ></code>
+    </div>
+    <div class="textarea-wrapper">
+      <div id="text-editor-input" contenteditable="true" onmousedown="tester();"> </div>
+    </div>
   </div>
 
   <div class="text-editor">
-    <input type="button" value="Obtenir le HTML" onclick="resultat();"> </code><br />
-    <textarea id="text-editor-output"></textarea>
+    <input type="button" value="Obtenir le HTML" onclick="resultat();"> </code>
+    <input type="button" value="Copier le HTML" onclick="commande('selectAll'); commande('copy')"> </code>
+    <div class="textarea-wrapper">
+      <textarea id="text-editor-output"></textarea>
+    </div>
   </div>
 </div>
