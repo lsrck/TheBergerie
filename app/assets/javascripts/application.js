@@ -31,11 +31,6 @@ function commande(nom,argument){
   document.execCommand(nom, false, argument);
 }
 
-function tester(){
-  if(document.queryCommandValue("h1")){
-    document.getElementById("bouton_bold").className = "actif";
-  }
-  else{
-    document.getElementById("bouton_bold").className = "";
-  }
+function resultat(){
+  document.getElementById("text-editor-output").value = document.getElementById("text-editor-input").innerHTML;
 }
