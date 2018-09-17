@@ -87,7 +87,7 @@
 .nav-list {
   justify-content:flex-end;
   align-items: flex-end;
-    a{
+    a {
       color: $yellow-color;
       font-family: $bree-font;
       font-size: 16.5px;
@@ -99,6 +99,14 @@
     }
     a:active{
       opacity: 0.8;
+  }
+}
+
+.header-admin{
+  li {
+    a {
+    color:red;
+    }
   }
 }
 
@@ -124,9 +132,9 @@
 .footer {
   background-color: $purple-color;
   height: 100%;
-  width: 70%;
+  width: 100%;
   margin: auto;
-  padding: 0 20px;
+  padding: 0 15vw;
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;

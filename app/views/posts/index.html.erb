@@ -1,5 +1,34 @@
-<div class="posts-index-wrapper">
-  Bienvenue sur le l'outil d'administration 
-  <li><%=link_to "Créer un nouveal article", new_post_path %></li>
-  <%= render 'layouts/index' %>
-</div>
+<div class="body-index-container">
+  <div class="posts-index-wrapper">
+    <%= "Bienvenue sur le l'outil d'administration #{current_user.username}" %>
+    <ul>
+      <li><%= link_to('Me déconnecter', destroy_user_session_path, method: :delete) %></li>        
+      <li><%=link_to "Créer un nouvel article", new_post_path %></li>
+    </ul>
+    <h1>THE BERGERIE</h1>
+    <span> Le meilleur de l'élevage pop-culturel! </br> Depuis 2015 </span>
+    <div class="index-posts-wrapper">
+      <% @posts.each do |post|%>
+      <div class="index-posts">
+        <div class="thumbnails-posts">
+          <%= image_tag("noxo.png", alt: "Noxorae") %>
+        </div>
+        <div class="info-posts">
+          <span class="post-category-posts"> <%= post.category.name.capitalize%> </span>
+          <h2> <%= post.title %> </h2>
+          <div class="post-date-user-posts">
+            <span class="post-date-posts"> <%= post.created_at.to_date.strftime("%d-%m-%Y") %> </span>
+            <span class="post-user-posts"> <%= post.user.username.capitalize%> </span>
+          </div>
+          <div class="post-preview-posts">
+            <%= raw post.preview %>
+          </div>
+          <div class="post-show-button">
+            <%= link_to "Lire ou éditer", post_path(post)%>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div> 

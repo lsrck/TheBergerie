@@ -1,8 +1,22 @@
-<%= @post.category.name %>
-<%= @post.user.username %>
-<%= @post.title %>
-<%=raw @post.content %>
-category
-<li><%= link_to "Editer l'article", edit_post_path(@post) %></li>
-<li><%= link_to "Supprimer l'article", @post, method: :delete,
-                            data: { confirm: "Etes-vous sur de bien vouloir supprimer l'article?" } %></li>
+<div class="body-show-container">
+  <ul>
+    <li><%= link_to "Retourner au tableau de bord", posts_path %></li>
+    <li><%= link_to "Editer l'article", edit_post_path(@post) %></li>
+    <li><%= link_to "Supprimer l'article", @post, method: :delete,
+                                data: { confirm: "Etes-vous sur de bien vouloir supprimer l'article?" } %></li>
+  </ul>
+  <div class="posts-show-wrapper">
+    <span class="post-category-posts"> <%= @post.category.name.capitalize %> </span>
+    <h1> <%= @post.title %> </h1>
+    <div class="post-date-user-posts">
+      <span class="post-date-posts"> <%= @post.created_at.to_date.strftime("%d-%m-%Y") %> </span>
+      <span class="post-user-posts"> <%= @post.user.username.capitalize%> </span>
+    </div>
+    <div class="post-preview-content">
+      <%= raw @post.preview %>
+    </div>
+    <div class="post-content-posts">
+      <%= raw @post.content %>
+    </div>
+  </div>
+</div>

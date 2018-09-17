@@ -1,21 +1,23 @@
-<div class="posts-new-wrapper">
-  <h1>Publier un article</h1>
-  <%= form_for(@post, html: {class: "post-form"}) do |f| %>
-    <%= render 'layouts/error_messages' %>
+<div class="body-index-container">
+  <div class="posts-new-wrapper">
+    <h1>Publier un article</h1>
+    <%= form_for(@post, html: {class: "post-form"}) do |f| %>
+      <%= render 'layouts/error_messages' %>
 
-    <%= f.label :catégorie %>
-    <%= f.select(:category_id, @category_options) %>
-      
-    <%= f.label :titre, "Titre (Préformaté)" %>
-    <%= f.text_field :title, placeholder: "Titre de l'article" %>
+      <%= f.label :catégorie %>
+      <%= f.select(:category_id, @category_options) %>
+        
+      <%= f.label :titre, "Titre (Préformaté)" %>
+      <%= f.text_field :title, placeholder: "Titre de l'article" %>
 
-    <%= f.label :preview, "Résumé (Préformaté)" %>
-    <%= f.text_field :preview, placeholder: "Résumé de l'article" %>
+      <%= f.label :preview, "Résumé (Préformaté)" %>
+      <%= f.text_field :preview, placeholder: "Résumé de l'article" %>
 
-    <%= f.label :contenu, "Article (HTML!)" %>
-    <%= f.text_field :content, placeholder: "Coller le contenu HTML obtenu par un éditeur" %>
-      
-    <%= f.submit "Créer mon article", class: "btn btn-primary" %>
-  <% end %>
-  <%= render 'layouts/text_editor' %>
+      <%= f.label :contenu, "Article (HTML!)" %>
+      <%= f.text_field :content, placeholder: "Coller le contenu HTML obtenu par un éditeur" %>
+        
+      <%= f.submit "Créer mon article", class: "btn btn-primary" %>
+    <% end %>
+    <%= render 'layouts/text_editor' %>
+  </div>
 </div>

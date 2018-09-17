@@ -1,6 +1,6 @@
 <header class="header">
   <div class="header-logo">
-    <%= link_to image_tag("logo_b.png", class: "logo", alt: "Logo TheBergerie"), 'http://thebergerie.net/' %>
+    <%= link_to image_tag("logo_b.png", class: "logo", alt: "Logo TheBergerie"), static_pages_home_path %>
     <h1 class="site-title">The Bergerie</h1>
     <h2 class="site-description">Le meilleur de l'élevage pop-culturel!</h2>
   </div>
@@ -16,16 +16,23 @@
       </ul>
     </div>
     <!--<div class="header-nav">-->
-      <nav class="header-nav">
-        <ul class="header-list nav-list">
-          <li> <%= link_to "Home", static_pages_home_path %></li>
-          <li> <%= link_to "Actualité", static_pages_news_path %></li>
-          <li> <%= link_to "Art/Culture", static_pages_art_culture_path %></li>
-          <li> <%= link_to "Cinéma", static_pages_cinema_path %></li>
-          <li> <%= link_to "Musique", static_pages_music_path %></li>
-          <li> <%= link_to "A propos", static_pages_about_path %></li>
+    <div class=>
+      <% if user_signed_in? %>
+        <ul class="header-list nav-list header-admin">
+          <li><%= link_to "Tableau de bord", posts_path %></li>
+          <li><%= link_to current_user.username, "#" %>
         </ul>
-      </nav>
+      <% end %>
     </div>
+    <nav class="header-nav">
+      <ul class="header-list nav-list">
+        <li> <%= link_to "Home", static_pages_home_path %></li>
+        <li> <%= link_to "Actualité", static_pages_news_path %></li>
+        <li> <%= link_to "Art/Culture", static_pages_art_culture_path %></li>
+        <li> <%= link_to "Cinéma", static_pages_cinema_path %></li>
+        <li> <%= link_to "Musique", static_pages_music_path %></li>
+        <li> <%= link_to "A propos", static_pages_about_path %></li>
+      </ul>
+    </nav>
   </div>
 </header>

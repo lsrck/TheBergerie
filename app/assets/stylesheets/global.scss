@@ -18,10 +18,18 @@ h1, h2, h3, h4, h5, h6 {
   height: 14vh;
 }
 
-.body-container {
+.body-index-container {
   background-color: white;
   min-height: 74vh;
   width: 60vw;
+  margin: auto;
+}
+
+.body-show-container {
+  background-color: white;
+  min-height: 74vh;
+  width: 50vw;
+  min-width: 650px;
   margin: auto;
 }
 

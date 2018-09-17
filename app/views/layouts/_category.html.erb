@@ -1,27 +1,29 @@
-<div class="posts-home-wrapper">
-  <div class="index-posts-wrapper">
-    <% @posts.each do |post|%>
-      <% if post.category.name == yield(:title) %>
-      <div class="index-posts">
-        <div class="thumbnails-posts">
-          <%= image_tag("noxo.png", alt: "Noxorae") %>
+<div class="body-index-container">
+  <div class="posts-home-wrapper">
+    <div class="index-posts-wrapper">
+      <% @posts.each do |post|%>
+        <% if post.category.name == yield(:title) %>
+        <div class="index-posts">
+          <div class="thumbnails-posts">
+            <%= image_tag("noxo.png", alt: "Noxorae") %>
+          </div>
+          <div class="info-posts">
+            <span class="post-category-posts"> <%= post.category.name.capitalize%> </span>
+            <h2> <%= post.title %> </h2>
+            <div class="post-date-user-posts">
+              <span class="post-date-posts"> <%= post.created_at.to_date.strftime("%d-%m-%Y") %> </span>
+              <span class="post-user-posts"> <%= post.user.username.capitalize%> </span>
+            </div>
+            <div class="post-preview-posts">
+              <%= raw post.preview %>
+            </div>
+            <div class="post-show-button">
+              <%= link_to "Lire la suite", post_path(post)%>
+            </div>
+          </div>
         </div>
-        <div class="info-posts">
-          <span class="post-category-posts"> <%= post.category.name.capitalize%> </span>
-          <h2> <%= post.title %> </h2>
-          <div class="post-date-user-posts">
-            <span class="post-date-posts"> <%= post.created_at.to_date.strftime("%d-%m-%Y") %> </span>
-            <span class="post-user-posts"> <%= post.user.username.capitalize%> </span>
-          </div>
-          <div class="post-preview-posts">
-            <%= raw post.preview %>
-          </div>
-          <div class="post-show-button">
-            <%= link_to "Lire la suite", post_path(post)%>
-          </div>
-        </div>
-      </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
