@@ -191,3 +191,65 @@
 .actif {
   background-color: grey;
 }
+
+@media (max-width: 1200px) {
+  /* CONTAINER STYLES */
+  #posts {
+    padding-top: 12vh;
+  }
+  .posts-home-wrapper {
+    padding-top: 2vh;
+    &>h1, >span {
+      display: none;
+    }
+  }
+  /* CONTENT STYLES */
+  .thumbnails-posts {
+  margin-right: 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  img {
+    height: 18vw;
+    border-radius: 50vw;
+    }
+  }
+  .post-category-posts,.post-preview-posts
+  ,.post-show-button
+   {
+    display: none;
+  }
+  .index-posts {
+    margin: 1vh 2vw;
+    padding: 0 0 2vh 0;
+    border-bottom: solid 1px #b4b4b4;
+  }
+  .info-posts {
+    &>h2 {
+      font-size: 130%;
+      overflow: hidden;
+      color: $pink-color;
+    }
+    &>.post-date-user-posts {
+      order: -1;
+    }
+  }
+  .post-user-posts, .post-date-posts {
+    color: rgba(0,0,0,.5);
+    font-size: 70%;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'Open-sans'
+  }
+  .index-posts::after {
+    border: 10px solid;
+    border-color: transparent transparent transparent $pink-color;
+    content: "";
+    height: 0;
+    right: -3%;
+    top: 50%;
+    position: relative;
+    width: 0;
+  }
+}

@@ -163,7 +163,7 @@
   /* HEADER STYLES */
   .header {
     width: 100%;
-    padding: 0 5vw;
+    padding: 0;
   }
   .header-logo {
     display: flex;
@@ -171,6 +171,7 @@
     justify-content: flex-start;
     align-items: center;
     width: 66%;
+    padding-left: 5vw;
     &>h1 {
       position:absolute;
       float: left;
@@ -194,6 +195,7 @@
   }
   .show-mobile-menu {
     display: block;
+    padding-right: 5vw;
   }
   .header-social {
     display: none;
@@ -240,5 +242,23 @@
   /* CONTENT STYLES */
   #static_pages {
     background-image: none;
+    padding-top: 10vh;
+  }
+
+  /* FOOTER STYLES */
+  .footer {
+    width: 100%;
+    padding: 0 5vw;
+  }
+  .suivez-nous {
+    display: none;
+  }
+  .footer-list {
+    &>li{
+      &>a {
+        padding: 2vh 2vw;
+        font-size:130%;
+      }
+    }
   }
 }
