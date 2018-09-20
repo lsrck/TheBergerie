@@ -19,11 +19,13 @@
       <% if user_signed_in? %>
         <ul class="header-list nav-list header-admin">
           <li><%= link_to "Tableau de bord", posts_path %></li>
-          <li><%= current_user.username %></li>
+          <li><%= link_to "#{current_user.username}", "#" %></li>
         </ul>
       <% end %>
     </div>
     <nav class="header-nav">
+      <input type="checkbox" id="mobile-menu" class="mobile-menu-check">
+      <label for="mobile-menu" class="show-mobile-menu"><i class="fas fa-bars"></i></label>
       <ul class="header-list nav-list">
         <li> <%= link_to "Home", static_pages_home_path %></li>
         <li> <%= link_to "Actualité", static_pages_news_path %></li>

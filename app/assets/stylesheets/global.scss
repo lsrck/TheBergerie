@@ -38,3 +38,9 @@ h1, h2, h3, h4, h5, h6 {
   height: 12vh;
   min-height: 70px;
 }
+
+@media (max-width: 1200px) {
+  .global-header {
+    height: 10vh;
+  }
+}
