@@ -15,12 +15,11 @@
         <li><a href="https://www.youtube.com/channel/UCz00sjGIwWCRbsVdf5Lcrtg"><i class="fab fa-youtube"></i></a></li>
       </ul>
     </div>
-    <!--<div class="header-nav">-->
-    <div class=>
+    <div>
       <% if user_signed_in? %>
         <ul class="header-list nav-list header-admin">
           <li><%= link_to "Tableau de bord", posts_path %></li>
-          <li><%= link_to current_user.username, "#" %>
+          <li><%= current_user.username %></li>
         </ul>
       <% end %>
     </div>
