@@ -30,3 +30,29 @@
     height: auto;
   }
 }
+
+@media (max-width: 1200px) {
+  .posts-show-wrapper {
+    padding: 0;
+    &>h1 {
+      background-color: $yellow-color;
+      font-size: 180%;
+      text-align: center;
+      padding: 2vh 5vw;
+      line-height: 130%;
+    }
+  }
+  .post-date-user-posts-show {
+    background-color: $yellow-color;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 2vh;
+  }
+  .post-preview-content, .post-content-posts {
+    box-sizing: border-box;
+    color: rgba(0,0,0,.7);
+    font-size: 100%;
+    line-height: 150%;
+    padding: 2vh 5vw;
+  }
+}

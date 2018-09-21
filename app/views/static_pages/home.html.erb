@@ -11,7 +11,7 @@
         </div>
         <div class="info-posts">
           <span class="post-category-posts"> <%= post.category.name%> </span>
-          <h2> <%= post.title %> </h2>
+          <h2><%=link_to "#{post.title}", article_path(post) %></h2>
           <div class="post-date-user-posts">
             <span class="post-date-posts"> <%= post.created_at.to_date.strftime("%d-%m-%Y") %> </span>
             <span class="post-user-posts"> <%= post.user.username.capitalize%> </span>
