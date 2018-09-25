@@ -1,7 +1,7 @@
 <%= form_for(@post, html: {class: "post-form"}) do |f| %>
   <%= render 'layouts/error_messages' %>
 
-  <%= f.label :catégorie %>
+  <%= f.label :categorie %>
   <%= f.select(:category_id, @category_options) %>
     
   <%= f.label :titre, "Titre (Préformaté)" %>
