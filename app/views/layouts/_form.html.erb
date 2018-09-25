@@ -1,11 +1,20 @@
-<%= f.label :title %>
-<%= f.text_field :title %>
+<%= form_for(@post, html: {class: "post-form"}) do |f| %>
+  <%= render 'layouts/error_messages' %>
 
-<%= f.label :preview %>
-<%= f.text_field :preview %>
+  <%= f.label :catégorie %>
+  <%= f.select(:category_id, @category_options) %>
+    
+  <%= f.label :titre, "Titre (Préformaté)" %>
+  <%= f.text_field :title, placeholder: "Titre de l'article" %>
 
-<%= f.label :content %>
-<%= f.text_field :content %>
+  <%= f.label :thumbnail, "Vignette (1MB Max)" %>
+  <%= f.file_field :thumbnail, accept: 'image/jpeg,image/gif,image/png' %>
 
-<%# f.label :category %>
-<%# f.select(:category, options_for_select(["Actualité","Art/Culture","Cinema","Musique"])) %>
+  <%= f.label :preview, "Résumé (Préformaté)" %>
+  <%= f.text_field :preview, placeholder: "Résumé de l'article" %>
+
+  <%= f.label :contenu, "Article (HTML!)" %>
+  <%= f.text_field :content, placeholder: "Coller le contenu HTML obtenu par un éditeur" %>
+    
+  <%= f.submit "Créer mon article", class: "btn btn-primary" %>
+<% end %>

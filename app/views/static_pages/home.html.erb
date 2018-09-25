@@ -7,7 +7,7 @@
       <% @posts.each do |post|%>
       <div class="index-posts">
         <div class="thumbnails-posts">
-          <%= image_tag("noxo.png", alt: "Noxorae") %>
+          <%= image_tag post.thumbnail.url, alt: "thumbnail" if post.thumbnail? %>
         </div>
         <div class="info-posts">
           <span class="post-category-posts"> <%= post.category.name%> </span>

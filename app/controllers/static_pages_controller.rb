@@ -19,7 +19,7 @@ class StaticPagesController < ApplicationController
     @posts = Post.order(:created_at).reverse
   end
 
-  def music 
+  def music
     @posts = Post.order(:created_at).reverse
   end
 
