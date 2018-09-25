@@ -5,6 +5,7 @@ class StaticPagesController < ApplicationController
 
   def news
     @posts = Post.order(:created_at).reverse
+    @last_post_img = Post.last.header_pic.url
   end
 
   def show
@@ -13,14 +14,17 @@ class StaticPagesController < ApplicationController
 
   def art_culture
     @posts = Post.order(:created_at).reverse
+    @last_post_img = Post.last.header_pic.url
   end
 
   def cinema
     @posts = Post.order(:created_at).reverse
+    @last_post_img = Post.last.header_pic.url
   end
 
   def music
     @posts = Post.order(:created_at).reverse
+    @last_post_img = Post.last.header_pic.url
   end
 
   def about; end

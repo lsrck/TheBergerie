@@ -1,11 +1,12 @@
 <div class="body-index-container">
   <div class="posts-home-wrapper">
     <div class="index-posts-wrapper">
+      <%= cl_image_tag @last_post_img, alt: "Image d’en-tête"%>
       <% @posts.each do |post|%>
         <% if post.category.name == yield(:title) %>
         <div class="index-posts">
           <div class="thumbnails-posts">
-            <%= image_tag post.thumbnail.url, alt: "thumbnail" if post.thumbnail? %>
+            <%= cl_image_tag post.thumbnail.url, alt: "thumbnail" if post.thumbnail? %>
           </div>
           <div class="info-posts">
             <span class="post-category-posts"> <%= post.category.name.capitalize%> </span>

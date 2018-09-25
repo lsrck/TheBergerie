@@ -3,6 +3,9 @@
 
   <%= f.label :categorie %>
   <%= f.select(:category_id, @category_options) %>
+
+  <%= f.label :header_pic, "Image d’en-tête (5MB Max)" %>
+  <%= f.file_field :header_pic, accept: 'image/jpeg,image/gif,image/png' %>
     
   <%= f.label :titre, "Titre (Préformaté)" %>
   <%= f.text_field :title, placeholder: "Titre de l'article" %>
